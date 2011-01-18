@@ -6,11 +6,12 @@ my $tag = shift || $ARGV[0];
 my $title = shift || $ARGV[1];
 my $summary  = shift || $ARGV[2];
 
-my $host = '127.0.0.1';
-my $port = 5900;
+my $HOST = '127.0.0.1';
+my $PORT = '1216';
+
 my $sock = new IO::Socket::INET(
-    PeerAddr    => $host,
-    PeerPort    => $port,
+    PeerAddr    => $HOST,
+    PeerPort    => $PORT,
     Proto        => 'tcp',
 ) or exit;
  

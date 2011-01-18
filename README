@@ -41,5 +41,6 @@ is called.
 ** copy client_notify.pl somewhere it can be called easily.
 ** call client_notify.pl from weechat using the tag "weechat".
 *** As explained in the summary this will cause the server to check the name of the windows in focus.  If
-    it starts with weechat then the notification isn't sent. This way I can sent all PM's and mentions to my local machine.
+    it starts with weechat then the notification isn't sent. This way I can sent all PM's and mentions to my 
+    local machine.
 ** calling client_notify.pl using the tag "system" will always display the notification.

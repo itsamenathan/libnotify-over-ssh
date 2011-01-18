@@ -5,11 +5,13 @@ sub message;
 
 $SIG{CHLD} = 'IGNORE'; #automatic child reaping
 
-my $weechat_icon='/home/jimshoe/dev/client_server_notify/weechat_icon.png';
+my $weechat_icon='/home/jimshoe/dev/libnotify-over-ssh/weechat_icon.png';
+my $HOST = '127.0.0.1';
+my $PORT = '1216';
 
 my $sock = new IO::Socket::INET(
-    LocalHost    => '127.0.0.1',
-    LocalPort    => '1216',
+    LocalHost    => $HOST,
+    LocalPort    => $PORT,
     Proto        => 'tcp',
     Listen        => SOMAXCONN,
     Reuse        => 1
