@@ -8,20 +8,20 @@ I use this mainly with weechat but has a feature to make it more general.  When 
 server checks the name of the current focused window.  If it starts with weechat, notifications are suppressed if not notify-send 
 is called.
 
-Working Environment
+My Working Environment
 -------------
-* Local Machine
-** Debian Testing
-** Gnome-Terminal - 2.30.2
-** libnotify-bin - 0.5.0-2
-** perl - 5.10.1
-** openssh - 1:5.5p1-6
+###### Local Machine
+* Debian Testing
+* Gnome-Terminal - 2.30.2
+* libnotify-bin - 0.5.0-2
+* perl - 5.10.1
+* openssh - 1:5.5p1-6
 
-* Server
-** Debian Testing
-** Weechat 0.3.2
-** perl - 5.10.1
-** openssh - 1:5.5p1-6
+###### Server
+* Debian Testing
+* Weechat 0.3.2
+* perl - 5.10.1
+* openssh - 1:5.5p1-6
 
 How it works
 -------------
@@ -38,16 +38,17 @@ Usage
     * title   - This is the first string to be passed to notify-send
     * summary - This is the second string to be passed to notify-send
 
-== My Setup ==
-* Local Machine
-** added server_notify.pl to my startup apps.  In Gnome this is System -> Preferences -> Startup Application
-** edited .ssh/config and added "RemoteForward 1216 127.0.0.1:1216" to my server connection.
-*** or you can use ssh -L 1216:120.0.0.1:1216 user@host
+My Setup
+-------------
+###### Local Machine
+* added server_notify.pl to my startup apps.  In Gnome this is System -> Preferences -> Startup Application
+* edited .ssh/config and added "RemoteForward 1216 127.0.0.1:1216" to my server connection.
+* this works also ssh -L 1216:120.0.0.1:1216 user@host
 
-* Server
-** copy client_notify.pl somewhere it can be called easily.
-** call client_notify.pl from weechat using the tag "weechat".
-*** As explained in the summary this will cause the server to check the name of the windows in focus.  If
+###### Server
+* copy client_notify.pl somewhere it can be called easily.
+* call client_notify.pl from weechat using the tag "weechat".
+    As explained in the summary this will cause the server to check the name of the windows in focus.  If
     it starts with weechat then the notification isn't sent. This way I can sent all PM's and mentions to my 
     local machine.
-** calling client_notify.pl using the tag "system" will always display the notification.
+    calling client_notify.pl using the tag "system" will always display the notification.
