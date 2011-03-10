@@ -10,14 +10,14 @@ is called.
 
 My Working Environment
 -------------
-###### Local Machine
+### Local Machine
 * Debian Testing
 * Gnome-Terminal - 2.30.2
 * libnotify-bin - 0.5.0-2
 * perl - 5.10.1
 * openssh - 1:5.5p1-6
 
-###### Server
+### Server
 * Debian Testing
 * Weechat 0.3.2
 * perl - 5.10.1
@@ -40,12 +40,12 @@ Usage
 
 My Setup
 -------------
-###### Local Machine
+### Local Machine
 * added server_notify.pl to my startup apps.  In Gnome this is System -> Preferences -> Startup Application
 * edited .ssh/config and added "RemoteForward 1216 127.0.0.1:1216" to my server connection.
 * this works also ssh -L 1216:120.0.0.1:1216 user@host
 
-###### Server
+### Server
 * copy client_notify.pl somewhere it can be called easily.
 * call client_notify.pl from weechat using the tag "weechat".
     As explained in the summary this will cause the server to check the name of the windows in focus.  If
