@@ -2,7 +2,7 @@
 use strict;
 use IO::Socket;
 
-my $weechat_icon='/home/nwarner/scripts/libnotify-over-ssh/weechat_icon.png';
+my $weechat_icon='/home/jimshoe/scripts/libnotify-over-ssh/weechat_icon.png';
 my $HOST = '127.0.0.1';
 my $PORT = '1216';
 
@@ -11,7 +11,6 @@ my $socket = IO::Socket::INET->new('LocalPort' => $PORT,
     'Proto' => 'tcp',
     'Listen' => 4)
 or die "Can't create socket ($!)\n";
-print "Server listening\n";
 while (my $client = $socket->accept) {
   my ($tag, $title, $summary,$x);
   while (<$client>) {
