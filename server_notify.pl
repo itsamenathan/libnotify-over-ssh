@@ -1,8 +1,12 @@
 #!/usr/bin/perl -w
 use strict;
 use IO::Socket;
+use File::Basename;
+use Cwd 'abs_path';
+my $scriptpath = dirname(abs_path($0));
 
-my $weechat_icon='/home/jimshoe/scripts/libnotify-over-ssh/weechat_icon.png';
+my $weechat_icon="$scriptpath/icons/weechat_icon.png";
+my $system_icon="$scriptpath/icons/system_icon.png";
 my $HOST = '127.0.0.1';
 my $PORT = '1216';
 
@@ -45,7 +49,7 @@ sub message{
   if($tag eq 'system'){
     $title =~ s/[<&]//g; # remove some characters that libnotify hates
     $summary =~ s/[<&]//g;
-    my @args = ('/usr/bin/notify-send', $title, $summary);
+    my @args = ('/usr/bin/notify-send', $title, $summary, "--icon=$system_icon");
     system @args;
   }
 }
