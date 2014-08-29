@@ -43,7 +43,7 @@ My Setup
 ### Local Machine
 * added server_notify.pl to my startup apps.  In Gnome this is System -> Preferences -> Startup Application
 * edited .ssh/config and added "RemoteForward 1216 127.0.0.1:1216" to my server connection.
-* this works also ssh -L 1216:120.0.0.1:1216 user@host
+* this works also ssh -R 1216:127.0.0.1:1216 user@host
 
 ### Server
 * copy client_notify.pl somewhere it can be called easily.
