@@ -4,8 +4,8 @@ README for libnotify-over-ssh
 Summary
 -------------
 This is a client server perl script I wrote so that my server could essentially send libnotify messages to my local machine.  
-I use this mainly with weechat but has a feature to make it more general.  When calling the client with the weechat tag the 
-server checks the name of the current focused window.  If it starts with weechat, notifications are suppressed if not notify-send 
+I use this mainly with weechat but has a feature to make it more general.  When calling the client with the weechat tag the
+server checks the name of the current focused window.  If it starts with weechat, notifications are suppressed if not notify-send
 is called.
 
 My Working Environment
@@ -34,9 +34,9 @@ How it works
 Usage
 -------------
 ./client_notify.pl "tag" "title" "summary"
-    * tag     - A string that lets you distinguish messages 
-    * title   - This is the first string to be passed to notify-send
-    * summary - This is the second string to be passed to notify-send
+* tag     - A string that lets you distinguish messages
+* title   - This is the first string to be passed to notify-send
+* summary - This is the second string to be passed to notify-send
 
 My Setup
 -------------
@@ -48,7 +48,4 @@ My Setup
 ### Server
 * copy client_notify.pl somewhere it can be called easily.
 * call client_notify.pl from weechat using the tag "weechat".
-    As explained in the summary this will cause the server to check the name of the windows in focus.  If
-    it starts with weechat then the notification isn't sent. This way I can sent all PM's and mentions to my 
-    local machine.
-    calling client_notify.pl using the tag "system" will always display the notification.
+  * As explained in the summary this will cause the server to check the name of the windows in focus.  If it starts with weechat then the notification isn't sent. This way I can sent all PM's and mentions to my local machine. Calling client_notify.pl using the tag "system" will always display the notification.
